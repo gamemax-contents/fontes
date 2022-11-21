@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dxwebster/gamemax-gabinete-diamond.git"
+    "url": "git+https://github.com/gamemax-contents/fontes.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dxwebster/gamemax-gabinete-diamond/issues"
+    "url": "https://github.com/gamemax-contents/fontes/issues"
   },
-  "homepage": "https://github.com/dxwebster/gamemax-gabinete-diamond#readme",
+  "homepage": "https://github.com/gamemax-contents/fontes#readme",
   "devDependencies": {
     "clean-css-cli": "^5.6.1",
     "html-minifier": "^4.0.0"
