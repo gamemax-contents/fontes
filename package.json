@@ -1,0 +1,23 @@
+{
+  "name": "diamond-bk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "min": "./scripts.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxwebster/gamemax-gabinete-diamond.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dxwebster/gamemax-gabinete-diamond/issues"
+  },
+  "homepage": "https://github.com/dxwebster/gamemax-gabinete-diamond#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.1",
+    "html-minifier": "^4.0.0"
+  }
+}

@@ -1,0 +1,45 @@
+// mobile
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.overlap {
+  margin-top: -130px;
+}
+
+.reverse {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.show-mobile {
+  display: block;
+}
+
+.show-desktop {
+  display: none;
+}
+
+//desktop
+@media (min-width: 992px) {
+  .show-desktop {
+    display: block;
+  }
+  .show-mobile {
+    display: none;
+  }
+  .reverse {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .padding-top-6 {
+    padding-top: 6rem;
+  }
+
+  .overlap {
+    margin-top: -205px;
+  }
+}

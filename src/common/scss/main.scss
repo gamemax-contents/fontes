@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@import "colors";
+@import "reset";
+@import "grid";
+@import "family";
+@import "sizes";
+@import "helpers";
+@import "header";
+@import "footer";
+
+// mobile
+main {
+  p {
+    margin-top: 1.5rem;
+    text-align: justify;
+  }
+
+  #first {
+    background-color: $green;
+
+    .text {
+      margin-top: 90px;
+      color: black;
+    }
+  }
+
+  #second {
+    background-image: url("../img/bg-02.png");
+    background-position: center;
+    background-size: cover;
+
+    .text {
+      color: white;
+    }
+  }
+
+  #third {
+    background-color: $green;
+    margin-top: 60px;
+
+    .text {
+      color: $black;
+    }
+
+    .image {
+      img {
+        margin-top: -110px;
+      }
+    }
+  }
+
+  #first,
+  #second,
+  #third {
+    padding: 2rem 1rem;
+  }
+}
+
+// desktop
+@media (min-width: 992px) {
+  main {
+    #first {
+      margin-top: 40px;
+
+      .text {
+        margin-top: 0px;
+      }
+
+      .image {
+        img {
+          margin-top: -150px;
+        }
+      }
+    }
+
+    #second {
+      background-image: url("../img/bg-02.png");
+      background-position: center;
+      background-size: cover;
+
+      .text {
+        p {
+          margin-top: 3rem;
+        }
+      }
+    }
+
+    #third {
+      margin-top: 0;
+
+      .image {
+        img {
+          margin-top: 0px;
+        }
+      }
+    }
+
+    #first,
+    #second,
+    #third {
+      padding: 2rem 5rem;
+    }
+  }
+}
