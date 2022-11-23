@@ -1,45 +1,76 @@
+PRODUCT_NAME=$1
+BUILD_PATH='../build/'$PRODUCT_NAME'_BUILD'
 
-PROJECT_NAME='../build/'${PWD##*/}'_BUILD'
+HTML_FROM='src/'$PRODUCT_NAME'/index.html'
+HTML_TO=$BUILD_PATH'/index.html'
+
+IMG_FROM='src/'$PRODUCT_NAME'/img'
+IMG_TO=$BUILD_PATH'/img'
+
+FONTS_FROM='src/common/fonts'
+FONTS_TO=$BUILD_PATH'/fonts'
+
+CSS_FROM='src/common/css/main.css'
+CSS_TO=$BUILD_PATH'/css/main.css'
+
 
 build_project(){
-
-echo $PROJECT_NAME
   
-  cleancss -o $PROJECT_NAME/css/main.css css/main.css 
+  echo $PRODUCT_NAME '-------------'
+  
+  # Minify CSS
+  cleancss -o $CSS_TO $CSS_FROM 
   if [ $? -eq 0 ]; then
-    echo '✅ CSS minified'
+    echo '✔ CSS minified'
   else
     echo '❌ CSS not minified'
   fi
 
-
-  html-minifier -o $PROJECT_NAME/index.html index.html --file-ext html --remove-comments --collapse-whitespace --minify-js true --minify-css true 
+  # Copy IMAGES
+  cp -r $IMG_FROM $IMG_TO  
   if [ $? -eq 0 ]; then
-    echo '✅ HTML minified'
+    echo '✔ Images copied'
   else
-    echo '❌ HTML not minified'
+    echo '❌ Images not copied'
   fi
     
-
-  cp -r img $PROJECT_NAME
+  # Copy FONTS
+  cp -r $FONTS_FROM $FONTS_TO 
   if [ $? -eq 0 ]; then
-    echo '✅ Images copied'
-  else
-    echo '❌ Images not minified'
-  fi
-    
-
-  cp -r fonts $PROJECT_NAME 
-  if [ $? -eq 0 ]; then
-    echo '✅ Fonts copied'
+    echo '✔ Fonts copied'
   else
     echo '❌ Fonts not minified'
   fi
+
+  # Minify HTML
+  html-minifier -o $HTML_TO $HTML_FROM --file-ext html --remove-comments --collapse-whitespace --minify-js true --minify-css true 
+  if [ $? -eq 0 ]; then
+    echo '✔ HTML minified'
+  else
+    echo '❌ HTML not minified'
+  fi
+
+  # replace css url
+  OLD='\.\.\/common\/css\/main\.\css'
+  NEW='css\/main\.\css'
+  sed -i.bak "s/$OLD/$NEW/g" $BUILD_PATH'/index.html'
+  if [ $? -eq 0 ]; then
+    echo '✔ fix CSS URL in HTML'
+  else
+    echo '❌ CSS URL not fixed'
+  fi
 }
+
 
 build_project
 if [ $? -eq 0 ]; then
-  echo '🎉 Build Success'
+  echo '👏 Build Success'
+  echo '\n'
 else
-  echo '😕 Sorry, error'
+  echo '😕 Sorry, build error'
 fi
+
+
+
+
+
