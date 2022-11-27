@@ -5,7 +5,10 @@ HTML_FROM='src/'$PRODUCT_NAME'/index.html'
 HTML_TO=$BUILD_PATH'/index.html'
 
 IMG_FROM='src/'$PRODUCT_NAME'/img'
-IMG_TO=$BUILD_PATH'/img'
+IMG_TO=$BUILD_PATH
+
+IMG_COMMON_FROM='src/common/img'
+IMG_COMMON_TO=$BUILD_PATH
 
 FONTS_FROM='src/common/fonts'
 FONTS_TO=$BUILD_PATH'/fonts'
@@ -16,7 +19,7 @@ CSS_TO=$BUILD_PATH'/css/main.css'
 
 build_project(){
   
-  echo $PRODUCT_NAME '-------------'
+  echo $PRODUCT_NAME
   
   # Minify CSS
   cleancss -o $CSS_TO $CSS_FROM 
@@ -33,7 +36,16 @@ build_project(){
   else
     echo '❌ Images not copied'
   fi
+
+  # Copy Common IMAGES
+  cp -r $IMG_COMMON_FROM $IMG_COMMON_TO  
+  if [ $? -eq 0 ]; then
+    echo '✔ Common Images copied'
+  else
+    echo '❌ Common Images not copied'
+  fi
     
+  
   # Copy FONTS
   cp -r $FONTS_FROM $FONTS_TO 
   if [ $? -eq 0 ]; then
