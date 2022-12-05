@@ -49,10 +49,23 @@ main {
     }
   }
 
+  #fourth{
+    h3{
+      margin-bottom: 1rem;
+    }
+  }
+
   #first,
   #second,
-  #third {
+  #third,
+  #fourth {
     padding: 2rem 1rem;
+  }
+
+  h4{
+    text-align: center;
+    color: $green;
+    margin: 0.5rem 0 1rem;
   }
 }
 
@@ -97,7 +110,8 @@ main {
 
     #first,
     #second,
-    #third {
+    #third,
+    #fourth {
       padding: 2rem 5rem;
     }
   }

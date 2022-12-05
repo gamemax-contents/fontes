@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "./scripts.sh GP400A"
+    "build": "./scripts.sh"
   },
   "repository": {
     "type": "git",

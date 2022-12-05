@@ -55,6 +55,10 @@
 
 // tablet & desktop
 @media (min-width: 992px) {
+  .col-lg-2 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
   .col-lg-4 {
     flex: 0 0 auto;
     width: 33.333333%;
