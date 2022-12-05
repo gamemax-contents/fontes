@@ -5,23 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=3, initial-scale=1.0" />
     <title>Prévias - Fontes</title>
+
+    <style>
+      body{
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      main{
+        margin: 0 auto;
+        max-width: 500px;
+      }
+
+      h2{
+        text-align: center;
+      }
+
+      section{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px
+      }
+
+      fieldset {
+        padding: 10px 10px 0;
+        min-height: 110px;
+      }
+
+      legend{
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      li {
+        list-style-type: none;
+        margin-bottom: 10px;
+      }
+
+      form{
+        margin-bottom: 20px;
+        flex: 1;
+        
+      }
+
+    </style>
+
   </head>
   <body>
-    <h2>Prévias - Fontes Gamemax</h2>
-    <ul>
-      <h4>Lote 1</h4>
-      <li><a href="src/GM1050/index.html">GM1050</a></li>
-      <li><a href="src/GM800/index.html">GM800</a></li>
-      <li><a href="src/GP400A/index.html">GP400A</a></li>
 
-      <h4>Lote 2</h4>
-      <li><a href="src/GP750/index.html">GP750</a></li>
-      <li><a href="src/GS600/index.html">GS600</a></li>
+    
+    <main>
+      <h2>Fontes Gamemax</h2>
+      <section>
+        <form>
+          <fieldset>
+            <legend>Lote 1</legend>
+            <li><a href="src/GM1050/index.html">GM1050</a></li>
+            <li><a href="src/GM800/index.html">GM800</a></li>
+            <li><a href="src/GP400A/index.html">GP400A</a></li>
+          </fieldset>
+        </form>
 
-      <h4>Lote 3</h4>
-      <li><a href="src/GM550/index.html">GM550</a></li>
-      <li><a href="src/GM600/index.html">GM600</a></li>
-      <li><a href="src/GM650/index.html">GM650</a></li>
-    </ul>
+        <form>
+          <fieldset>
+            <legend>Lote 2</legend>
+            <li><a href="src/GP750/index.html">GP750</a></li>
+            <li><a href="src/GS600/index.html">GS600</a></li>
+          </fieldset>
+        </form>
+
+        <form>
+          <fieldset>
+            <legend>Lote 3</legend>
+            <li><a href="src/GM550/index.html">GM550</a></li>
+            <li><a href="src/GM600/index.html">GM600</a></li>
+            <li><a href="src/GM650/index.html">GM650</a></li>
+          </fieldset>
+        </form>
+      </section>
+    </section>
   </body>
 </html>
