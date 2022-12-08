@@ -2149,15 +2149,17 @@ img {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat/Montserrat-Medium.otf"); }
 h4 {
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Conthrax Semibold", sans-serif; }
 
 h2,
 h3 {
   font-family: "Bitsumishi", sans-serif; }
 
-main h3 {
+main h3,
+header h3 {
   font-family: "Conthrax Heavy", sans-serif; }
-main p {
+main p,
+header p {
   font-family: "Montserrat", sans-serif; }
 
 #product-name h2 {
@@ -2174,8 +2176,6 @@ main {
   font-size: 0.9rem; }
   main h3 {
     font-size: 1rem; }
-  main h4 {
-    font-size: 0.7rem; }
 
 footer h4 {
   font-size: 0.6rem; }
@@ -2190,10 +2190,8 @@ footer h4 {
     font-weight: bold; }
 
   main h3 {
-    font-size: 2.6rem;
+    font-size: 2rem;
     line-height: 1.2; }
-  main h4 {
-    font-size: 0.8rem; }
   main p {
     font-size: 1.3rem; }
 
@@ -2238,7 +2236,7 @@ header {
   background-image: url("../img/bg-01.png");
   background-position: center;
   background-size: cover;
-  padding: 1rem; }
+  padding: 1rem 2rem; }
   header #product-name {
     margin-top: 0; }
     header #product-name h4 {
@@ -2251,12 +2249,11 @@ header {
       display: block;
       position: absolute;
       bottom: -16px; }
-  header img {
-    margin-top: 20px; }
 
 @media (min-width: 992px) {
   header {
-    padding: 1rem 6rem; }
+    padding: 1rem 6rem;
+    padding-bottom: 150px; }
     header #product-name {
       margin-top: 2rem; }
       header #product-name h2::after {
@@ -2271,9 +2268,6 @@ footer div + div {
 @media (min-width: 992px) {
   footer {
     padding: 2rem 16rem; } }
-main p {
-  margin-top: 1.5rem;
-  text-align: justify; }
 main #first {
   background-color: #5cbf14; }
   main #first .text {
@@ -2292,17 +2286,19 @@ main #third {
     color: #000; }
   main #third .image img {
     margin-top: -110px; }
-main #fourth h3 {
+main #conectors h4 {
+  text-align: center;
+  color: #5cbf14;
+  font-size: 0.6rem;
   margin-bottom: 1rem; }
 main #first,
 main #second,
 main #third,
-main #fourth {
+main #conectors {
   padding: 2rem 1rem; }
-main h4 {
-  text-align: center;
-  color: #5cbf14;
-  margin: 0.5rem 0 1rem; }
+main p {
+  margin-top: 1rem;
+  text-align: justify; }
 
 @media (min-width: 992px) {
   main #first {
@@ -2324,7 +2320,7 @@ main h4 {
   main #first,
   main #second,
   main #third,
-  main #fourth {
+  main #conectors {
     padding: 2rem 5rem; } }
 
 /*# sourceMappingURL=main.css.map */

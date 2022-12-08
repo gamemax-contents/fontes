@@ -1,5 +1,5 @@
 PRODUCT_NAME=$1
-BUILD_PATH='../build/'$PRODUCT_NAME'_BUILD'
+BUILD_PATH='build/'$PRODUCT_NAME
 
 HTML_FROM='src/'$PRODUCT_NAME'/index.html'
 HTML_TO=$BUILD_PATH'/index.html'

@@ -3,7 +3,7 @@ header {
   background-image: url("../img/bg-01.png");
   background-position: center;
   background-size: cover;
-  padding: 1rem;
+  padding: 1rem 2rem;
 
   #product-name {
     margin-top: 0;
@@ -22,16 +22,13 @@ header {
       bottom: -16px;
     }
   }
-
-  img {
-    margin-top: 20px;
-  }
 }
 
 // desktop
 @media (min-width: 992px) {
   header {
     padding: 1rem 6rem;
+    padding-bottom: 150px;
 
     #product-name {
       margin-top: 2rem;
