@@ -29,12 +29,12 @@ build_project(){
   fi
 
   # Copy Custom Style CSS
-  cp -r $CSS_CUSTOM_FROM $CSS_CUSTOM_TO
-  if [ $? -eq 0 ]; then
-    echo '✔ Custom CSS copied'
-  else
-    echo '❌ Custom CSS not copied'
-  fi
+  # cp -r $CSS_CUSTOM_FROM $CSS_CUSTOM_TO
+  # if [ $? -eq 0 ]; then
+  #   echo '✔ Custom CSS copied'
+  # else
+  #   echo '❌ Custom CSS not copied'
+  # fi
 
   # Copy IMAGES
   cp -r $IMG_FROM $IMG_TO  
