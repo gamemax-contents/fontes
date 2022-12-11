@@ -1,96 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=3, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Fontes Gamemax</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=3, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Prévias - Fontes</title>
-</head>
+  <body>
+    <h2>Fontes Gamemax</h2>
+    <main></main>
+  </body>
 
-<body>
-  <h2>Fontes Gamemax</h2>
-  <main>
-    <form>
-      <fieldset>
-        <legend>Lote 1</legend>
-        <li>
-          <span>GM1050</span>
-          <a href="src/GM1050" class="ver" target="_blank">ver</a>
-          <a href="build/GM1050.zip" download="GM1050.zip" class="download">baixar</a>
-        </li>
-        <li>
-          <span>GM800</span>
-          <a href="src/GM800" class="ver" target="_blank">ver</a>
-          <a href="build/GM800.zip" download="GM800.zip" class="download">baixar</a>
-        </li>
-        <li>
-          <span>GP400A</span>
-          <a href="src/GP400A" class="ver" target="_blank">ver</a>
-          <a href="build/GP400A.zip" download="GP400A.zip" class="download">baixar</a>
-        </li>
-      </fieldset>
-    </form>
+  <script type="text/javascript" src="lotesList.js"></script>
+  <script>
+    function item(name) {
+      return `
+          <li>
+            <span>${name}</span>
+            <a href="src/${name}" class="ver" target="_blank">ver</a>
+            <a href="build/${name}" download="${name}.zip" class="download">baixar</a>
+          </li>
+        `
+    }
 
-    <form>
-      <fieldset>
-        <legend>Lote 2</legend>
-        <li>
-          <span>GP750</span>
-          <a href="src/GP750" class="ver" target="_blank">ver</a>
-          <a href="build/GP750.zip" download="GP750.zip" class="download">baixar</a>
-        </li>
-        <li>
-          <span>GS600</span>
-          <a href="src/GS600" class="ver" target="_blank">ver</a>
-          <a href="build/GS600.zip" download="GS600.zip" class="download">baixar</a>
-        </li>
-      </fieldset>
-    </form>
+    const mainContent = lotesList.map((lote, index) => {
+      return `
+          <form>
+            <fieldset>
+              <legend>Lote ${index + 1}</legend>
+              ${lote.map(name => item(name)).join("")}
+            </fieldset>
+          </form>
+        `
+    })
 
-    <form>
-      <fieldset>
-        <legend>Lote 3</legend>
-        <li>
-          <span>GM550</span>
-          <a href="src/GM550" class="ver" target="__blank">ver</a>
-          <a href="build/GM550.zip" download="GM550.zip" class="download">baixar</a>
-        </li>
-        <li>
-          <span>GM600</span>
-          <a href="src/GM600" class="ver" target="_blank">ver</a>
-          <a href="build/GM600.zip" download="GM600.zip" class="download">baixar</a>
-        </li>
-        <li>
-          <span>GM650</span>
-          <a href="src/GM650" class="ver" target="_blank">ver</a>
-          <a href="build/GM650.zip" download="GM650.zip" class="download">baixar</a>
-        </li>
-      </fieldset>
-    </form>
-
-    <form>
-      <fieldset>
-        <legend>Lote 4</legend>
-        <li>
-          <span>GM500</span>
-          <!-- <a href="src/GM500" class="ver" target="__blank">ver</a>
-          <a href="build/GM500.zip" download="GM500.zip" class="download">baixar</a> -->
-        </li>
-        <li>
-          <span>GM500G</span>
-          <!-- <a href="src/GM500G" class="ver" target="_blank">ver</a>
-          <a href="build/GM500G.zip" download="GM500G.zip" class="download">baixar</a> -->
-        </li>
-        <li>
-          <span>GM600G</span>
-          <!-- <a href="src/GM600G" class="ver" target="_blank">ver</a>
-          <a href="build/GM600G.zip" download="GM600G.zip" class="download">baixar</a> -->
-        </li>
-      </fieldset>
-    </form>
-  </main>
-</body>
-
+    document.querySelector("main").innerHTML = mainContent.join("")
+  </script>
 </html>
