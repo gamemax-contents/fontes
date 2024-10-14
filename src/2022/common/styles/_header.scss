@@ -1,0 +1,47 @@
+// mobile
+header {
+  background-image: url("../img/bg-01.png");
+  background-position: center;
+  background-size: cover;
+  padding: 1rem 2rem;
+
+  #product-name {
+    margin-top: 0;
+
+    h4 {
+      color: $green;
+    }
+
+    h2::after {
+      content: "";
+      width: 5rem;
+      height: 4px;
+      background-color: $green;
+      display: block;
+      position: absolute;
+      bottom: -16px;
+    }
+  }
+}
+
+// desktop
+@media (min-width: 992px) {
+  header {
+    padding: 1rem 6rem;
+    padding-bottom: 150px;
+
+    #product-name {
+      margin-top: 2rem;
+
+      h2::after {
+        width: 12rem;
+        height: 5px;
+        bottom: -23px;
+      }
+
+      h4 {
+        padding-top: 5px;
+      }
+    }
+  }
+}

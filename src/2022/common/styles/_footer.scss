@@ -1,0 +1,12 @@
+// mobile
+footer {
+  div + div {
+    border-left: 4px solid $green;
+  }
+}
+// desktop -----------
+@media (min-width: 992px) {
+  footer {
+    padding: 2rem 16rem;
+  }
+}
