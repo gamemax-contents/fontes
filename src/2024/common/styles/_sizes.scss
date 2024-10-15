@@ -3,23 +3,18 @@
   font-size: 1.8rem;
 }
 
-main {
-  p {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-  }
-
+main p {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
 }
 
 // desktop
 @media (min-width: 992px) {
   #product-name {
-    font-size: 1.2rem;
+    font-size: 3.5rem;
   }
 
-  main {
-    p {
-      font-size: 1.3rem;
-    }
+  main p {
+    font-size: 1.3rem;
   }
 }
