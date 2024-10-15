@@ -2185,6 +2185,10 @@ main p {
 .flex-column {
   flex-direction: column; }
 
+.highlight {
+  font-weight: bold;
+  font-style: italic; }
+
 .overlap {
   margin-top: -130px; }
 
