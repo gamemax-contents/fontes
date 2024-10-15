@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import "colors";
+@import "reset";
+@import "grid";
+@import "family";
+@import "sizes";
+@import "helpers";
+@import "header";
+@import "footer";
+
+// mobile
+main {
+  img {
+    padding: 1rem 0;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    text-align: justify;
+  }
+}
+
+// desktop
+@media (min-width: 992px) {
+  main {
+    width: 70%
+  }
+}
+

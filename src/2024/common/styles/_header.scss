@@ -1,0 +1,26 @@
+// mobile
+header {
+  padding: 0;
+  position: relative;
+
+  #logo {
+    position:absolute;
+    width: 100%;
+    padding: 2rem
+  }
+}
+
+// desktop
+@media (min-width: 992px) {
+  header {
+    #logo {
+      position: absolute;
+      width: 100%;
+      padding: 2rem;
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+}

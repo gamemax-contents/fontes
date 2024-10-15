@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  padding: 0;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+body {
+  background-color: $black;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: $white;
+  -webkit-font-smoothing: antialiased;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 1216px !important;
+  padding: 1rem;
+  margin: auto;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0 !important;
+  padding-left: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80% !important;
+  color: #676363 !important;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+
+h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+}

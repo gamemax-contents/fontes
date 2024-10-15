@@ -1,0 +1,41 @@
+// Family
+
+@font-face {
+  font-family: "Bitsumishi";
+  src: url("../fonts/Bitsumishi/Bitsumishi.TTF");
+}
+
+@font-face {
+  font-family: "Conthrax Semibold";
+  src: url("../fonts/Conthrax/Conthrax\ SemiBold.otf");
+}
+
+@font-face {
+  font-family: "Conthrax Heavy";
+  src: url("../fonts/Conthrax/Conthrax\ Heavy.otf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Medium.otf");
+}
+
+h4 {
+  font-family: "Conthrax Semibold", sans-serif;
+}
+
+h2,
+h3 {
+  font-family: "Bitsumishi", sans-serif;
+}
+
+main,
+header {
+  h3 {
+    font-family: "Conthrax Heavy", sans-serif;
+  }
+
+  p {
+    font-family: "Arial", sans-serif;
+  }
+}
