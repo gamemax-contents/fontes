@@ -31,13 +31,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16" # Versão do Node.js que você está usando
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get last committed folder name inside src
+        id: folder_name
+        run: |
+          # Get the path of the last modified file inside src
+          LAST_FILE=$(git diff-tree --no-commit-id --name-only -r HEAD | grep '^src/' | head -n 1)
+          # Extract the folder name corresponding to PRODUCT_NAME from the path
+          LAST_FOLDER=$(echo "$LAST_FILE" | cut -d '/' -f 4)
+          echo "LAST_FOLDER=$LAST_FOLDER" >> $GITHUB_ENV
+
+      - name: Run build script
+        run: bash ./build_script.sh 2024 ${{ env.LAST_FOLDER }}
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: "."
+          # Upload build directory
+          path: "./build/2024/${{ env.LAST_FOLDER }}"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
