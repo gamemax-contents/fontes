@@ -2162,15 +2162,15 @@ main p,
 header p {
   font-family: "Arial", sans-serif; }
 
-#product-name h4 {
-  font-size: 1.9rem; }
+#product-name {
+  font-size: 1.8rem; }
 
 main p {
   font-size: 1.2rem;
   line-height: 1.4rem; }
 
 @media (min-width: 992px) {
-  #product-name h4 {
+  #product-name {
     font-size: 1.2rem; }
 
   main p {
@@ -2220,25 +2220,11 @@ header {
     position: absolute;
     width: 100%;
     padding: 2rem; }
-  header #product-name h2::after {
-    content: "";
-    width: 5rem;
-    height: 4px;
-    background-color: #5cbf14;
-    display: block;
-    position: absolute;
-    bottom: -16px; }
 
 @media (min-width: 992px) {
   header {
     padding: 1rem 6rem;
-    padding-bottom: 150px; }
-    header #product-name {
-      margin-top: 2rem; }
-      header #product-name h2::after {
-        width: 12rem;
-        height: 5px;
-        bottom: -23px; } }
+    padding-bottom: 150px; } }
 footer div + div {
   border-left: 4px solid #5cbf14; }
 
@@ -2250,10 +2236,5 @@ main img {
 main p {
   margin: 0.5rem 0;
   text-align: justify; }
-
-@media (min-width: 992px) {
-  main p {
-    margin-top: 1rem;
-    margin-bottom: 0; } }
 
 /*# sourceMappingURL=main.css.map */
