@@ -12,5 +12,4 @@ var list = [
     "TL900",
   ],
 ];
-
 module.exports = list;
