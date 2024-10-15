@@ -1,16 +1,16 @@
 // mobile
 header {
-  background-image: url("../img/bg-01.png");
-  background-position: center;
-  background-size: cover;
-  padding: 1rem 2rem;
+  padding: 0;
+  position: relative;
+
+  #logo {
+    position:absolute;
+    width: 100%;
+    padding: 2rem
+  }
 
   #product-name {
-    margin-top: 0;
 
-    h4 {
-      color: $green;
-    }
 
     h2::after {
       content: "";
@@ -37,10 +37,6 @@ header {
         width: 12rem;
         height: 5px;
         bottom: -23px;
-      }
-
-      h4 {
-        padding-top: 5px;
       }
     }
   }

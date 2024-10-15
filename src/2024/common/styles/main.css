@@ -2160,25 +2160,19 @@ header h3 {
   font-family: "Conthrax Heavy", sans-serif; }
 main p,
 header p {
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Arial", sans-serif; }
 
 #product-name h2 {
-  font-size: 4rem;
-  line-height: 0.6;
-  margin-bottom: 24px;
-  position: relative; }
+  font-size: 4rem; }
 #product-name h3 {
   font-size: 1.2rem; }
 #product-name h4 {
-  font-size: 0.6rem; }
+  font-size: 1.9rem; }
 
 main {
   font-size: 0.9rem; }
   main h3 {
     font-size: 1rem; }
-
-footer h4 {
-  font-size: 0.6rem; }
 
 @media (min-width: 992px) {
   #product-name h2 {
@@ -2186,17 +2180,15 @@ footer h4 {
   #product-name h3 {
     font-size: 2.2rem; }
   #product-name h4 {
-    font-size: 1.2rem;
-    font-weight: bold; }
+    font-size: 1.2rem; }
 
   main h3 {
-    font-size: 2rem;
-    line-height: 1.2; }
+    font-size: 2rem; }
   main p {
-    font-size: 1.3rem; }
+    font-size: 1.3rem; } }
+.text-center {
+  text-align: center; }
 
-  footer h4 {
-    font-size: 1.5rem; } }
 .align-center {
   display: flex;
   align-items: center; }
@@ -2233,22 +2225,20 @@ footer h4 {
   .overlap {
     margin-top: -205px; } }
 header {
-  background-image: url("../img/bg-01.png");
-  background-position: center;
-  background-size: cover;
-  padding: 1rem 2rem; }
-  header #product-name {
-    margin-top: 0; }
-    header #product-name h4 {
-      color: #5cbf14; }
-    header #product-name h2::after {
-      content: "";
-      width: 5rem;
-      height: 4px;
-      background-color: #5cbf14;
-      display: block;
-      position: absolute;
-      bottom: -16px; }
+  padding: 0;
+  position: relative; }
+  header #logo {
+    position: absolute;
+    width: 100%;
+    padding: 2rem; }
+  header #product-name h2::after {
+    content: "";
+    width: 5rem;
+    height: 4px;
+    background-color: #5cbf14;
+    display: block;
+    position: absolute;
+    bottom: -16px; }
 
 @media (min-width: 992px) {
   header {
@@ -2259,69 +2249,21 @@ header {
       header #product-name h2::after {
         width: 12rem;
         height: 5px;
-        bottom: -23px; }
-      header #product-name h4 {
-        padding-top: 5px; } }
+        bottom: -23px; } }
 footer div + div {
   border-left: 4px solid #5cbf14; }
 
 @media (min-width: 992px) {
   footer {
     padding: 2rem 16rem; } }
-main #first {
-  background-color: #5cbf14; }
-  main #first .text {
-    margin-top: 90px;
-    color: black; }
-main #second {
-  background-image: url("../img/bg-02.png");
-  background-position: center;
-  background-size: cover; }
-  main #second .text {
-    color: white; }
-main #third {
-  background-color: #5cbf14;
-  margin-top: 60px; }
-  main #third .text {
-    color: #000; }
-  main #third .image img {
-    margin-top: -110px; }
-main #conectors h3 {
-  margin-bottom: 0.5rem; }
-main #conectors h4 {
-  text-align: center;
-  color: #5cbf14;
-  font-size: 0.6rem;
-  margin: 0.5rem 0; }
-main #first,
-main #second,
-main #third,
-main #conectors {
-  padding: 2rem 1rem; }
+main img {
+  padding: 1rem 0; }
 main p {
   margin: 0.5rem 0;
-  text-align: justify; }
+  text-align: justify;
+  line-height: 1.2rem; }
 
 @media (min-width: 992px) {
-  main #first {
-    margin-top: 40px; }
-    main #first .text {
-      margin-top: 0px; }
-    main #first .image img {
-      margin-top: -150px; }
-  main #third {
-    margin-top: 0; }
-    main #third .image img {
-      margin-top: 0px; }
-  main #conectors h3 {
-    margin-bottom: 1rem; }
-  main #conectors h4 {
-    font-size: 0.8rem; }
-  main #first,
-  main #second,
-  main #third,
-  main #conectors {
-    padding: 2rem 5rem; }
   main p {
     margin-top: 1rem;
     margin-bottom: 0; } }
