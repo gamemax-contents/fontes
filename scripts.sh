@@ -23,16 +23,15 @@ build_project(){
   # Minify Common CSS
   cleancss -o "$CSS_COMMON_TO" "$CSS_COMOM_FROM" 
   if [ $? -eq 0 ]; then
-    echo '✔ Common CSS minified'
+    echo '✅ Common CSS minified'
   else
     echo '❌ Common CSS not minified'
   fi
 
-
   # Copy IMAGES
   cp -r "$IMG_FROM" "$IMG_TO"  
   if [ $? -eq 0 ]; then
-    echo '✔ Images copied'
+    echo '✅ Images copied'
   else
     echo '❌ Images not copied'
   fi
@@ -40,7 +39,7 @@ build_project(){
   # Copy FONTS
   cp -r "$FONTS_FROM" "$FONTS_TO" 
   if [ $? -eq 0 ]; then
-    echo '✔ Fonts copied'
+    echo '✅ Fonts copied'
   else
     echo '❌ Fonts not copied'
   fi
@@ -48,7 +47,7 @@ build_project(){
   # Minify HTML
   html-minifier -o "$HTML_TO" "$HTML_FROM" --file-ext html --remove-comments --collapse-whitespace --minify-js true --minify-css true 
   if [ $? -eq 0 ]; then
-    echo '✔ HTML minified'
+    echo '✅ HTML minified'
   else
     echo '❌ HTML not minified'
   fi
@@ -58,7 +57,7 @@ build_project(){
   NEW_COMMON='styles\/main\.\css'
   sed -i.bak "s/$OLD_COMMON/$NEW_COMMON/g" "$BUILD_PATH/index.html"
   if [ $? -eq 0 ]; then
-    echo '✔ fix COMMON CSS URL in HTML'
+    echo '✅ Fix COMMON CSS URL in HTML'
   else
     echo '❌ COMMON CSS URL not fixed'
   fi
@@ -68,7 +67,7 @@ build_project(){
   NEW_CUSTOM='styles\/custom\.\css'
   sed -i.bak "s/$OLD_CUSTOM/$NEW_CUSTOM/g" "$BUILD_PATH/index.html"
   if [ $? -eq 0 ]; then
-    echo '✔ fix CUSTOM CSS URL in HTML'
+    echo '✅ Fix CUSTOM CSS URL in HTML'
   else
     echo '❌ CUSTOM CSS URL not fixed'
   fi
@@ -77,9 +76,9 @@ build_project(){
   cd build
   zip -r "$PRODUCT_NAME.zip" "$PRODUCT_NAME"
   if [ $? -eq 0 ]; then
-    echo '✔ zip folder'
+    echo '✅ Zip folder'
   else
-    echo '❌ folder not zipped'
+    echo '❌ Folder not zipped'
   fi
 }
 
