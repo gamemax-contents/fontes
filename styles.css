@@ -1,7 +1,10 @@
+html {
+  background: black;
+  color: white;
+}
+
 body {
   font-family: sans-serif;
-  padding: 0;
-  margin: 0;
 }
 
 h2 {
@@ -9,33 +12,31 @@ h2 {
   margin-bottom: 30px;
 }
 
+form {
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+fieldset {
+  width: 300px;
+  margin: 0 auto;
+}
+
+
 main {
   margin: 0 auto;
   width: 70%;
   display: flex;
   flex-direction: column;
-  gap: 10px
-}
-
-@media (min-width: 992px) {
-  main {
-    flex-direction: row;
-  }
-}
-
-fieldset {
-  padding: 10px 10px 0;
-}
-
-legend {
-  font-weight: bold;
-  text-transform: uppercase;
+  gap: 10px;
 }
 
 li {
   list-style-type: none;
-  margin-bottom: 10px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
   border-bottom: 1px solid grey;
   padding-bottom: 10px;
 }
@@ -45,51 +46,36 @@ li:last-child {
   padding-bottom: 0;
 }
 
-.download,
-.ver {
+.buttons{
   display: flex;
-  margin-left: 10px;
-}
-
-.download::after {
-  white-space: nowrap;
-}
-
-form {
-  margin-bottom: 20px;
-  flex: 1;
-
-}
-
-
-html {
-  background: black;
-  color: white;
-}
-
-fieldset {
-  width: 200px;
-  margin: 0 auto;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 20px
 }
 
 a {
-  color: red;
+  color: #00bbff;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid #00bbff;
+  padding: 5px;
+}
+
+a:hover {
+  background-color: #00bbff;
+  color: white;
 }
 
 button {
   background-color: transparent;
-  border: 1px solid red;
-  color: red;
+  border: 1px solid #ff4646;
+  color: #ff4646;
   cursor: pointer;
   padding: 5px;
 }
 
 button:hover {
-  background-color: red;
+  background-color: #ff4646;
   color: white;
 }
+
+

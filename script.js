@@ -20,8 +20,10 @@ function item(name) {
   return `
       <li>
         <span>${name}</span>
-        <a href="build/${name}" class="ver" target="_blank">ver</a>
-        <button onclick="download('${name}')">Download</button>
+        <div class="buttons">
+          <a href="build/${name}" class="ver" target="_blank">Visualizar</a>
+          <button onclick="download('${name}')">Download</button>
+        </div>
       </li>
     `;
 }
