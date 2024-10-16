@@ -1,91 +1,57 @@
+#!/bin/bash
+
 YEAR=$1
 PRODUCT_NAME=$2
 
 BUILD_PATH="build/$PRODUCT_NAME"
-
 HTML_FROM="src/$YEAR/$PRODUCT_NAME/index.html"
 HTML_TO="$BUILD_PATH/index.html"
-
 IMG_FROM="src/$YEAR/$PRODUCT_NAME/img"
-IMG_TO="$BUILD_PATH"
-
 FONTS_FROM="src/$YEAR/common/fonts"
-FONTS_TO="$BUILD_PATH/fonts"
+CSS_COMMON_FROM="src/$YEAR/common/styles/main.css"
 
-CSS_COMOM_FROM="src/$YEAR/common/styles/main.css"
-CSS_COMMON_TO="$BUILD_PATH/styles/main.css"
-
-build_project(){
-  
-  echo "$PRODUCT_NAME -------------"
-  echo "Year: $YEAR"
-
-  # Minify Common CSS
-  cleancss -o "$CSS_COMMON_TO" "$CSS_COMOM_FROM" 
+# Função para exibir o resultado de cada comando
+check_status() {
   if [ $? -eq 0 ]; then
-    echo '✅ Common CSS minified'
+    echo "✅ $1"
   else
-    echo '❌ Common CSS not minified'
-  fi
-
-  # Copy IMAGES
-  cp -r "$IMG_FROM" "$IMG_TO"  
-  if [ $? -eq 0 ]; then
-    echo '✅ Images copied'
-  else
-    echo '❌ Images not copied'
-  fi
-    
-  # Copy FONTS
-  cp -r "$FONTS_FROM" "$FONTS_TO" 
-  if [ $? -eq 0 ]; then
-    echo '✅ Fonts copied'
-  else
-    echo '❌ Fonts not copied'
-  fi
-
-  # Minify HTML
-  html-minifier -o "$HTML_TO" "$HTML_FROM" --file-ext html --remove-comments --collapse-whitespace --minify-js true --minify-css true 
-  if [ $? -eq 0 ]; then
-    echo '✅ HTML minified'
-  else
-    echo '❌ HTML not minified'
-  fi
-
-  # Replace common CSS URL in HTML
-  OLD_COMMON='\.\.\/common\/styles\/main\.\css'
-  NEW_COMMON='styles\/main\.\css'
-  sed -i.bak "s/$OLD_COMMON/$NEW_COMMON/g" "$BUILD_PATH/index.html"
-  if [ $? -eq 0 ]; then
-    echo '✅ Fix COMMON CSS URL in HTML'
-  else
-    echo '❌ COMMON CSS URL not fixed'
-  fi
-
-  # Replace custom CSS URL in HTML
-  OLD_CUSTOM='styles\/custom\.\css'
-  NEW_CUSTOM='styles\/custom\.\css'
-  sed -i.bak "s/$OLD_CUSTOM/$NEW_CUSTOM/g" "$BUILD_PATH/index.html"
-  if [ $? -eq 0 ]; then
-    echo '✅ Fix CUSTOM CSS URL in HTML'
-  else
-    echo '❌ CUSTOM CSS URL not fixed'
-  fi
-
-  # Zip project
-  cd build
-  zip -r "$PRODUCT_NAME.zip" "$PRODUCT_NAME"
-  if [ $? -eq 0 ]; then
-    echo '✅ Zip folder'
-  else
-    echo '❌ Folder not zipped'
+    echo "❌ $2"
+    exit 1  # Interrompe o script em caso de erro
   fi
 }
 
+build_project() {
+  echo "$PRODUCT_NAME -------------"
+  echo "Ano: $YEAR"
+
+  # Criação das pastas necessárias
+  mkdir -p "$BUILD_PATH/styles" "$BUILD_PATH/fonts"
+
+  # Minificar o CSS comum
+  cleancss -o "$BUILD_PATH/styles/main.css" "$CSS_COMMON_FROM"
+  check_status "CSS comum minificado" "Erro ao minificar o CSS comum"
+
+  # Copiar imagens
+  cp -r "$IMG_FROM" "$BUILD_PATH"
+  check_status "Imagens copiadas" "Erro ao copiar as imagens"
+
+  # Copiar fontes
+  cp -r "$FONTS_FROM/"* "$BUILD_PATH/fonts"
+  check_status "Fontes copiadas" "Erro ao copiar as fontes"
+
+  # Minificar HTML
+  html-minifier -o "$HTML_TO" "$HTML_FROM" --file-ext html --remove-comments --collapse-whitespace --minify-js true --minify-css true
+  check_status "HTML minificado" "Erro ao minificar o HTML"
+
+  # Substituir URLs no HTML
+  sed -i.bak -e 's/\.\.\/common\/styles\/main\.css/styles\/main\.css/g' \
+             -e 's/styles\/custom\.css/styles\/custom\.css/g' "$HTML_TO"
+  check_status "URLs de CSS corrigidos no HTML" "Erro ao corrigir URLs de CSS no HTML"
+
+  # Compactar o projeto
+  (cd build && zip -r "$PRODUCT_NAME.zip" "$PRODUCT_NAME")
+  check_status "Projeto compactado" "Erro ao compactar o projeto"
+}
+
 build_project
-if [ $? -eq 0 ]; then
-  echo '👏 Build Success'
-  echo '\n'
-else
-  echo '😕 Sorry, build error'
-fi
+echo '👏 Build concluído com sucesso'
