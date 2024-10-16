@@ -1,5 +1,7 @@
 var list = [
   [
+    "TL900",
+    "TL1050",
     "GM1050",
     "GM800",
     "GP400A",
@@ -9,7 +11,6 @@ var list = [
     "GM600",
     "GM650",
     "GM500",
-    "TL900",
   ],
 ];
 module.exports = list;
