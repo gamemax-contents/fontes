@@ -60,3 +60,36 @@ form {
   flex: 1;
 
 }
+
+
+html {
+  background: black;
+  color: white;
+}
+
+fieldset {
+  width: 200px;
+  margin: 0 auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: red;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid red;
+  color: red;
+  cursor: pointer;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
