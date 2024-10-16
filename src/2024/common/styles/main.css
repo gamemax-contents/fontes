@@ -2163,7 +2163,7 @@ header p {
   font-family: "Arial", sans-serif; }
 
 #product-name {
-  font-size: 1.5rem; }
+  font-size: 4.5vw; }
 
 main p {
   font-size: 1.2rem;
@@ -2171,7 +2171,7 @@ main p {
 
 @media (min-width: 992px) {
   #product-name {
-    font-size: 3.5rem; }
+    font-size: 4vw; }
 
   main p {
     font-size: 1.3rem; } }
